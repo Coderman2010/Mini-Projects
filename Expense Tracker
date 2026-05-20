@@ -1,0 +1,24 @@
+f = open("expenses.txt", "a")
+
+c = 0
+sr = 0
+s = "    "
+mx = 0
+
+while True:
+    askn = input("enter the expense name: ")
+    askc = int(input("Enter expense cost: "))
+    if askc == 2010:
+        break
+    sr += 1
+    c += askc
+    l = len(askn)
+    if l > mx:
+        mx = l
+    # mx = mx + 4
+    space = " " * (mx - len(askn))
+    write = f.write(f"\n{s}{sr}{s}|{s}{askn}{space}|{s}{askc}{s}{s}|")
+
+
+total = f.write(f"\n Total: {c}")
+f.close()
