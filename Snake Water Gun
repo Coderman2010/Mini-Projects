@@ -1,0 +1,35 @@
+import random
+
+points = 0
+while True:
+    cchoice = random.randint(1, 3)
+
+    ask = int(input("Snake=1, Water=2, Gun=3\n" + "Enter your choice: "))
+
+    if ask == cchoice:
+        print("it ij a draw")
+    if ask > 3:
+        print("plij input the correct no.")
+        break
+    elif ask == 1 and cchoice == 2:
+        print("The computer chose water YOU WIN!!!")
+        points += 1
+    elif ask == 2 and cchoice == 3:
+        print("The computer chose gun YOU WIN!!!")
+        points += 1
+    elif ask == 3 and cchoice == 2:
+        print("The computer chose water YOU LOSE!!!")
+    elif ask == 1 and cchoice == 3:
+        print("The computer chose gun YOU LOSE!!!")
+    elif ask == 2 and cchoice == 1:
+        print("The computer chose snake YOU LOSE!!!")
+    elif ask == 3 and cchoice == 1:
+        print("The computer chose snake YOU WIN!!!")
+        points += 1
+    print(f"You point score: {points}")
+
+    ask2 = input("Want to play again? Y/N: ").strip().capitalize()
+    if ask2 == "Y":
+        continue
+    else:
+        break
