@@ -1,0 +1,23 @@
+import multiprocessing
+import requests
+import os
+
+os.makedirs("files", exist_ok=True)
+
+
+def downloadfile(url, name):
+    response = requests.get(url)
+    open(f"files/{name}.jpg", "wb").write(response.content)
+
+
+url = "https://picsum.photos/2000/3000"
+
+pros = []
+for i in range(1, 5):
+    downloadfile(url, i)
+    p = multiprocessing.Process(target=downloadfile, args=[url, i])
+    p.start()
+    pros.append(p)
+
+for i in pros:
+    p.join()  # waits for the process to finish
