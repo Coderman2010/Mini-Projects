@@ -1,0 +1,37 @@
+import random
+
+range_end = int(input("Enter the highest range: "))
+randomno = random.randint(1, range_end)
+
+chance = 3
+while True:
+    if randomno == "2010":
+        print("You have found the easter egg in the code")
+        break
+    print("If you want to quit press: 2010")
+    guess = int(input("Enter the number: "))
+    chance = chance - 1
+    print(f"only {chance} chances left")
+    if chance == 0:
+        print("chances over")
+        break
+    if guess == randomno:
+        print("You guessed it right")
+        break
+    elif guess == 2010:
+        print(randomno)
+        break
+    elif guess < randomno:
+        print(" Guess Higher")
+    elif guess > randomno:
+        print("Guess Lower")
+
+    if guess == randomno:
+        ask = input("wanna try again Y/N\n").capitalize()
+        if ask == "Y":
+            continue
+        if ask == "N":
+            break
+        else:
+            print("expected reply not receieved ending the program")
+            break
