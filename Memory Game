@@ -1,0 +1,23 @@
+import time
+import random
+import os
+
+a = random.randint(0, 9)
+b = random.randint(0, 9)
+c = random.randint(0, 9)
+d = random.randint(0, 9)
+while True:
+    y = [a, b, c, d]
+    correct = "".join(map(str, y))
+    x = print(f"remember this: {correct}")
+
+    time.sleep(3)
+    os.system("cls")
+    break
+
+
+ask = input("Guess the no.: ").strip()
+if ask == correct:
+    print("You guessed it right")
+else:
+    print("Sorry")
