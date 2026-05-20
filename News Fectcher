@@ -1,0 +1,26 @@
+import requests
+
+params = {
+    "q": "tesla",
+    "language": "en",
+    "sortBy": "publishedAt",
+    "apiKey": "9baffb128f204185bea4d76349d973fc",
+}
+
+url = "https://newsapi.org/v2/everything"
+response = requests.get(url, params=params)
+
+data = response.json()
+# print(data)
+
+for article in data["articles"][:5]:
+    print("Title:", article["title"])
+    print("Author:", article["author"])
+    print("Link:", article["url"])
+
+# Drink water reminder
+from plyer import notification
+import winsound
+
+winsound.PlaySound("SystemNotification", winsound.SND_ALIAS)
+notification.notify(title="Drink water", message="Stay Hydrated", timeout=3)
