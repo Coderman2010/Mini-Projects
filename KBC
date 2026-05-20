@@ -1,0 +1,52 @@
+q = [
+    "What is the capital of India?",
+    "Who is known as the Father of the Nation in India?",
+    "How many states are there in India?",
+    "Which planet is known as the Red Planet?",
+    "Who wrote the national anthem of India?",
+    "What is the largest mammal on Earth?",
+    "In which direction does the sun rise?",
+    "Which is the longest river in India?",
+    "How many days are there in a leap year?",
+    "What is the national bird of India?",
+]
+
+a = [
+    "New Delhi",
+    "Mahatma Gandhi",
+    "28 States",
+    "Mars",
+    "Rabindranath Tagore",
+    "Blue Whale",
+    "East",
+    "The Ganga (Ganges)",
+    "366 days",
+    "Indian Peacock",
+]
+
+
+def Q1(e, t, points):
+    c1 = a[e]
+    print(q[t])
+    a1 = input("you ans = ")
+    a2 = a1.title()
+    if a2 == c1:
+        print("you are right")
+        points += 1
+
+    else:
+        print("You are Wrong")
+    print(points)
+    return points
+
+
+points = 0
+points = Q1(0, 0, points)
+points = Q1(1, 1, points)
+points = Q1(2, 2, points)
+
+# Display final points
+print("Your final score is:", points)
+
+name = input("Enter you name: ")
+age = int(input("Enter you age: "))
