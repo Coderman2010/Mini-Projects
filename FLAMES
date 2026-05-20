@@ -1,0 +1,26 @@
+flame = "FLAMESFLAMESFLAMESFLAMES"
+
+import time
+
+while True:
+    print("TO STOP SAY BREAK")
+    ask = str(input("Enter the name: \n")).upper()
+    if ask == "BREAK":
+        break
+    length = len(ask)
+    number = length - 1
+    rel = flame[number]
+    time.sleep(1)
+
+    if rel == "F":
+        print("Thou art companions.")
+    elif rel == "L":
+        print("Thou art amantes.")
+    elif rel == "A":
+        print("Thou art most Affectionate")
+    elif rel == "M":
+        print("Thou art to be wed in holy matrimony.")
+    elif rel == "E":
+        print("thou art foes")
+    elif rel == "S":
+        print("Thou art brethren.")
