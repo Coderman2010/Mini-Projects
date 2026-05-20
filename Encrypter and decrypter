@@ -1,0 +1,26 @@
+import random
+import string
+
+try:
+    a = int(input("press 1 if you want to code or press 2 if you want to decode"))
+    choice = random.choice(string.ascii_lowercase)
+    choice2 = random.choice(string.ascii_lowercase)
+    choice3 = random.choice(string.ascii_lowercase)
+    if a == 1:
+        b = input("enter the word you want to code")
+        if len(b) > 3:
+            c = choice + choice2 + choice3 + b[1:] + b[0] + choice + choice2 + choice3
+        else:
+            c = b[::-1]
+        print(c)
+    elif a == 2:
+        b = input("enter the word you want to decode")
+        if len(b) > 3:
+            c = b[-4] + b[3:-4]
+        else:
+            c = b[::-1]
+        print(c)
+    else:
+        print("input only 1 and 2")
+except Exception:
+    print("can only be integer")
