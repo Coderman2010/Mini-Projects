@@ -1,0 +1,44 @@
+import random
+e = 0
+while e!=21:
+        
+ ask = input("Enter your choice: ")
+ 
+ 
+ alln = ask.split()
+ if not alln[-1].isdigit():
+   print("Nalle sahi value daal")
+   break
+ x = int(alln[-1]) 
+
+
+ if x==21:
+   print("\n")
+   print("You Lose!!!")
+   e=21
+   break
+
+ choice = random.randint(1,3)
+
+ j=1
+ while j<=choice:
+    cchoice = x+j
+    print(cchoice, end=" ")
+    
+    j+=1
+    
+    if cchoice==21:
+      print("\n")
+      print("You Win!!!")
+      e=21
+ if e==21:
+      break     
+    
+ print("\n")
+
+
+
+
+
+
+
