@@ -1,0 +1,38 @@
+import random
+
+words = [
+    "rainbow",
+    "computer",
+    "science",
+    "programming",
+    "python",
+    "mathematics",
+    "player",
+    "condition",
+    "reverse",
+    "water",
+    "board",
+    "geeks",
+]
+
+word = random.choice(words)
+x = len(word)
+display = ["_"] * x
+
+game = 0
+while game <= 10:
+    ask = input("Enter your guess: ")
+    game += 1
+    if game == 10:
+        print("You are out of chances")
+        break
+    print(f"chances left: {10-game}")
+    for i in range(x):
+        if word[i] == ask:
+            display[i] = ask
+
+    if "_" not in display:
+        print("You guessed it correctly!!")
+        game = 10
+
+    print(" ".join(display))
