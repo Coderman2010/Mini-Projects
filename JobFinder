@@ -1,0 +1,29 @@
+from plyer import notification
+import requests
+import xml.etree.ElementTree as ET
+from bs4 import BeautifulSoup
+
+url = "https://realpython.github.io/fake-jobs/"
+
+response = requests.get(url)
+
+
+text = BeautifulSoup(response.text, "html.parser")
+
+# for jobs in text.find_all("h2"):
+#     for loca in text.find_all("p", class_="location"):
+#         for cont in text.find_all("div", class_="content"):
+#             print(jobs.text)
+#             print(loca.text)
+#             print(cont.text)
+
+cards = text.find_all("div", class_="card-content")
+
+for card in cards:
+    x = card.find("h2").text.strip()
+    y = card.find("p", class_="location").text.strip()
+    print("Job: ", x)
+    print("Location: ", y)
+    print("-" * 40)
+
+# print(response.text)
